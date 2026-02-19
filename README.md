@@ -428,3 +428,14 @@ qemu-img info debian.qcow2
 Также были настроены отдельные VirtualHost для каждого сайта и выполнен проброс портов для доступа с хостовой машины.
 
 В результате виртуальный сервер корректно работает, сайты открываются в браузере, а настройка выполнена успешно
+
+## 7. Библиография
+
+1. Курс Moodle "Контейнеризация и Виртуализация"
+   [https://elearning.usm.md/course/view.php?id=6806](https://elearning.usm.md/course/view.php?id=6806)
+2. Документация QEMU (запуск VM, hostfwd и т.д.)
+   [[https://sysmasters.net/faqs/kak-zapustit-ostanovit-ili-perezapustit-apache](https://www.qemu.org/docs/master)
+3. Руководство по установке Debian
+   [https://www.debian.org/releases/stable/installmanual](https://www.debian.org/releases/stable/installmanual)
+4. Chat GPT
+   [https://chatgpt.com/](https://chatgpt.com/)
