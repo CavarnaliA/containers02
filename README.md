@@ -62,7 +62,7 @@ cd containers02
   *.iso
   *.zip
   ```
- ![](images\Recurse.png)
+ ![](images/Recurse.png)
 
 ### 3.3 Создан виртуальный диск для Debian (8 GB, qcow2):
 
@@ -70,14 +70,14 @@ cd containers02
 qemu-img create -f qcow2 debian.qcow2 8G
 ```
 
-![](images\8G.png)
+![](images/8G.png)
 Для ознакомления  дополнительными параметрами утилиты выполнела команду:
 
 ```
 qemu-img --help
 ```
 
-![](images\qemu-img1.png)
+![](images/qemu-img1.png)
 
 ### 3.4 Запущена установка Debian на виртуальную машину из ISO:
 
@@ -95,13 +95,13 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd\debian.iso -boot d -m 2G
 
 **Пароль пользователя:** password;
 
-![](images\имякомпьютера.png)
+![](images/имякомпьютера.png)
 
-![](images\локалхост.png)
+![](images/локалхост.png)
 
-![](images\имяпользователя.png)
+![](images/имяпользователя.png)
 
-![](images\password.png)
+![](images/password.png)
 
 ### 3.5. Запуск виртуальной машины после установки с пробросом портов
 
@@ -126,7 +126,7 @@ apt update -y
 apt install -y apache2 php libapache2-mod-php php-mysql mariadb-server mariadb-client unzip
 ```
 
-![](images\su.png)
+![](images/su.png)
 
 ### 3.7. Скачивание phpMyAdmin и WordPress
 
@@ -138,7 +138,7 @@ ls -l
 
 `WordPress` скачался (200 OK, файл latest.zip есть)
 
-![](images\WordPress.png)
+![](images/WordPress.png)
 
 Попытка скачать `phpMyAdmin` завершилась ошибкой 404:
 
@@ -146,7 +146,7 @@ ls -l
 wget https://files.phpmyadmin.net/phpMyAdmin/5.2.2/phpMyAdmin-5.2.2-all-languages.zip
 ```
 
-![](images\404.png)
+![](images/404.png)
 
 После этого `phpMyAdmin` был скачан по рабочей ссылке и сохранён под именем phpmyadmin.zip:
 ```
@@ -155,7 +155,7 @@ wget -O phpmyadmin.zip https://files.phpmyadmin.net/phpMyAdmin/5.2.2/phpMyAdmin-
 ls -l
 ```
 
-![](images\MyAdmin.png)
+![](images/MyAdmin.png)
 
 ### 3.8. Распаковка в /var/www
 
@@ -175,7 +175,7 @@ unzip latest.zip
 mv wordpress /var/www/wordpress
 ```
 
-![](images\unziplatest.png)
+![](images/unziplatest.png)
 
 ### 3.9. Создание БД и пользователя MariaDB для WordPress
 
@@ -189,7 +189,7 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
-![](images\db.png)
+![](images/db.png)
 
 Права пользователя проверены командой:
 
@@ -197,7 +197,7 @@ EXIT;
 mysql -u root -e "SHOW GRANTS FOR 'user'@'localhost';"
 ```
 
-![](images\db1.png)
+![](images/db1.png)
 
 
 ### 3.10. Настройка VirtualHost Apache
@@ -223,7 +223,7 @@ nano /etc/apache2/sites-available/01-phpmyadmin.conf
 </VirtualHost>
 ```
 
-![](images\01-phpmyadmin.conf.png)
+![](images/01-phpmyadmin.conf.png)
 
 02-wordpress.conf:
 
@@ -244,7 +244,7 @@ nano /etc/apache2/sites-available/02-wordpress.conf
 </VirtualHost>
 ```
 
-![](images\02-wordpress.conf.png)
+![](images/02-wordpress.conf.png)
 
 ### 3.11. Регистрация конфигураций (a2ensite)
 
@@ -259,7 +259,7 @@ nano /etc/apache2/sites-available/02-wordpress.conf
 /usr/sbin/apache2ctl configtest
 ```
 
-![](images\syntax.png)
+![](images/syntax.png)
 
 ### 3.13. Добавление имён сайтов в /etc/hosts
 
@@ -268,7 +268,7 @@ nano /etc/apache2/sites-available/02-wordpress.conf
 127.0.0.1 wordpress.localhost
 ```
 
-![](images\etchosts.png)
+![](images/etchosts.png)
 
 ## 4. Запуск и тестирование
 
@@ -278,7 +278,7 @@ nano /etc/apache2/sites-available/02-wordpress.conf
 uname -a
 ```
 
-![](images\uname.png)
+![](images/uname.png)
 
 **Выводит:**
 
@@ -300,7 +300,7 @@ systemctl restart apache2
 systemctl status apache2 --no-pager
 ```
 
-![](images\systemctl.png)
+![](images/systemctl.png)
 
 Подтверждает:
 - Apache активен (active (running))
@@ -316,13 +316,13 @@ systemctl status apache2 --no-pager
 Результат:
 
 - `WordPress` открылся и установка была успешно завершена через веб-интерфейс.
-![](images\wp_db_form.png)
-![](images\wp_ok.png)
-![](images\wordpress_done.png)
+![](images/wp_db_form.png)
+![](images/wp_ok.png)
+![](images/wordpress_done.png)
 
 - `phpMyAdmin` — открывается через phpmyadmin.localhost:1080.
 
-![](images\phpMyAdmin.png)
+![](images/phpMyAdmin.png)
 
 ## 5. Ответы на вопросы
 
